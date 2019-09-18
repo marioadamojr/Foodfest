@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  get 'static/new'
-  get 'session/new'
+  root 'static#new'
+
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/logout' => 'session#destroy'
+
+
+
+
   resources :foods
   resources :festivals
   resources :trucks

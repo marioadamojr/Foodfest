@@ -58,6 +58,7 @@ GEM
       zeitwerk (~> 2.1, >= 2.1.8)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -73,6 +74,7 @@ GEM
       xpath (~> 3.2)
     childprocess (2.0.0)
       rake (< 13.0)
+    coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     erubi (1.8.0)
@@ -99,6 +101,9 @@ GEM
     nio4r (2.5.1)
     nokogiri (1.10.4-x64-mingw32)
       mini_portile2 (~> 2.4.0)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (4.0.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -194,10 +199,12 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   jbuilder (~> 2.7)
+  pry (~> 0.12.2)
   puma (~> 3.11)
   rails (~> 6.0.0)
   sass-rails (~> 5)

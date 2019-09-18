@@ -1,0 +1,10 @@
+<% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+<% end %>
+
+<h1><%= @guest.name %> Show Page</h1>
+
+Name: <%= @guest.name %> </br>
+Email: <%= @guest.email %> </br>
+Money: <%= @guest.money %> </br>
+<%= "ADMIN" if @user.admin %> </br>
