@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'static/new'
   get 'session/new'
-  resources :drinks
   resources :foods
   resources :festivals
   resources :trucks
