@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/signup' => 'guests#new'
   post '/signup' => 'guests#create'
 
+  post '/make_food' => 'foods#create'
+  post '/buy_food' => 'foods#purchase'
 
   resources :foods
   resources :festivals
