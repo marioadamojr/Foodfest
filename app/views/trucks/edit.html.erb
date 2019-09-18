@@ -1,1 +1,7 @@
 <%# <h1>Trucks#edit</h1> %>
+<h1>Edit Truck</h1>
+    <%= form_for @truck do |f| %>
+        Name: <%= f.text_field :name %> </br>
+        Money: <%= f.number_field :money %> </br>
+    <%= f.submit "Update Truck" %>
+<% end %>
