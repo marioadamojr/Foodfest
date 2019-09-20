@@ -1,0 +1,6 @@
+<%# <h1>Festivals#show</h1> %>
+<ul>
+    <% @festivals.trucks.each do |f| %>
+      <li><%= link_to "#{f.name}",  truck_path(f.id) %></li>
+      <% end %>
+</ul>

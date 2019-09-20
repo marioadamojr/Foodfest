@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static#new'
+  root 'festivals#index'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
