@@ -13,6 +13,10 @@ Time: <%= @festival.hours %> </br>
     <% end %>
 </ul>
 
+
+    <%= link_to "New Truck", new_truck_path %>
+
+
 <h3>Guests</h3>
 <% if !current_user %>
     <%= link_to "Sign Up", new_guest_path %>
