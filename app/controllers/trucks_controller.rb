@@ -15,6 +15,7 @@ class TrucksController < ApplicationController
 
     def show
         @truck = Truck.find(params[:id])
+        @festival = Festival.find(@truck.festival_id)
     end
 
     def index

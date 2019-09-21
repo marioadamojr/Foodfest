@@ -17,6 +17,8 @@ class GuestsController < ApplicationController
     def show
         if logged_in?
             @guest = Guest.find(params[:id])
+            @festival = Festival.find(@guest.festival_id)
+
         else
             redirect_to '/'
         end
