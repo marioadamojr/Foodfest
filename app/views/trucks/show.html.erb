@@ -3,6 +3,23 @@
 
 <%# list food items %>
 
+<h2>Food Items</h2>
+<ul>
+    <% @truck.foods.each do |t| %>
+        <li>  
+            <%= "#{t.name}" %> 
+        </li>
+    <% end %>
+</ul>
+
+<h3>New Food </h3>
+    <%= form_for ([@truck, @food]) do |f| %>
+        Name: <%= f.text_field :name %> </br>
+        Description: <%= f.text_area :description %> </br>
+        Money: <%= f.number_field :price %> </br>
+    <%= f.submit "Register Food" %>
+<% end %>
+
     <%= form_tag '/food', method: :post do %>
         <%= hidden_field_tag :truck_id, @truck.id %>
         <%= submit_tag "Purchase item" %>

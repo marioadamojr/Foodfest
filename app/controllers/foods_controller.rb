@@ -1,7 +1,12 @@
 class FoodsController < ApplicationController
-    def create
+  
+  def new
+    @food = Food.new
+  end
+  
+  def create
       @food = Food.new(guest_id: current_user.id, truck_id: params[:truck_id])
-      redirect_to truck_path(truck_id: params[:truck_id])
+      redirect_to truck_path(id: params[:truck_id])
     end
     
     def purchase
