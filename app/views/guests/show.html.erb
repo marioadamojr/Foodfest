@@ -9,4 +9,7 @@ Email: <%= @guest.email %> </br>
 Money: <%= @guest.money %> </br>
 Festival: <%= @guest.festival.name %> </br>
 
+<%= link_to "Edit Guest", edit_guest_path(@guest) %> </br>
+
+
 <%= link_to "Return to Festival", festival_path(@festival) %>

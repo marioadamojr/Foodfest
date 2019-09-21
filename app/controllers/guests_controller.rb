@@ -25,8 +25,22 @@ class GuestsController < ApplicationController
     end
 
     def index
-        # @guests = Guest.all
+        @guests = Guest.all
     end
+
+    def edit
+        @guest = Guest.find_by(id: params[:id])
+    end
+
+    def update
+        @guest = Guest.find_by(id: params[:id])
+        if @guest.update(guest_params)
+            redirect_to guest_path(@guest)
+        else
+            redirect_to edit_guest_path(@guest)
+        end
+    end
+
 
     private
 
