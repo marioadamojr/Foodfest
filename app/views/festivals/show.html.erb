@@ -15,7 +15,7 @@ Time: <%= @festival.hours %> </br>
 
 <h3>Guests</h3>
 <% if !current_user %>
-  <%= link_to "Sign Up", new_guest_path %>
+    <%= link_to "Sign Up", new_guest_path %>
 <% end %>  
 <ul>
     <% @festival.guests.each do |g| %>
