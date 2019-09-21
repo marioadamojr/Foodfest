@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'static#new'
+  root 'static#homepage'
 
-  # get '/login' => 'session#new'
-  # post '/login' => 'session#create'
-  # delete '/logout' => 'session#destroy'
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  get '/logout' => 'session#destroy'
 
   get '/signup' => 'guests#new'
   post '/signup' => 'guests#create'

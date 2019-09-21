@@ -37,6 +37,6 @@ class FestivalsController < ApplicationController
     private
 
     def festival_params
-        params.require(:festival).permit(:name, :email, :password, :money, :admin, :festival_id)
+        params.require(:festival).permit(:name, :location, :hours)
     end
 end

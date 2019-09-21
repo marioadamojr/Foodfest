@@ -1,9 +1,0 @@
-<%# <h1>Static#new</h1> %>
-<h1>Homepage</h1>
-<% if current_user %>
-  <p><%= link_to "Your Profile", guest_path(current_user.id) %></p>
-  <%= link_to "Log Out", '/logout', method: 'delete' %>
-<% else %>
-  <p><%= link_to "Sign Up", new_guest_path %></p>
-  <p><%= link_to "Log In", '/login' %></p>
-<% end %>  

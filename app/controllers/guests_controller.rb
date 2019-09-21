@@ -10,7 +10,6 @@ class GuestsController < ApplicationController
             # flash[:success] = "You have successfully created a new guest!"
             redirect_to @guest
         else
-            binding.pry
             redirect_to '/signup' 
         end
     end
