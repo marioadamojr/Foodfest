@@ -5,9 +5,14 @@ class GuestsController < ApplicationController
 
     def create
         @guest = Guest.create(guest_params)
-        return redirect_to '/signup' unless @guest.save
-        session[:guest_id] = @guest.id
-        redirect_to @guest
+        if @guest.save
+            session[:guest_id] = @guest.id
+            # flash[:success] = "You have successfully created a new guest!"
+            redirect_to @guest
+        else
+            binding.pry
+            redirect_to '/signup' 
+        end
     end
 
     def show
@@ -18,9 +23,13 @@ class GuestsController < ApplicationController
         end
     end
 
+    def index
+        @guests = Guest.all
+    end
+
     private
 
     def guest_params
-        params.require(:guest).permit(:name, :email, :password, :money, :admin, :festival_id)
+        params.require(:guest).permit(:name, :email, :password, :money, :admin)
     end
 end
