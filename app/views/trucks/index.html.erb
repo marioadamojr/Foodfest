@@ -1,16 +1,8 @@
 <%# <h1>Trucks#index</h1> %>
 <h1>Food Trucks Index </h1>
-<% if current_user.admin %>
-    <%= link_to "New Food Truck", new_truck_path %><br><br>
+   <%= link_to "New Food Truck", new_truck_path %><br><br>
 <ul>
     <% @trucks.each do |t| %>
-      <li><%= link_to "Show #{t.name}",  truck_path(t.id) %></li>
+      <li><%= link_to "Go to #{t.name}",  truck_path(t.id) %></li>
       <% end %>
 </ul>
-<% else %>
-<ul>
-  <% @trucks.each do |t| %>
-  <li><%= link_to "Go on #{t.name}",  truck_path(t.id) %></li>
-  <% end %>
-</ul>
-  <% end %>

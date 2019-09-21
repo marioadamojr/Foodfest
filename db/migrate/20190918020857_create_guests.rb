@@ -6,7 +6,6 @@ class CreateGuests < ActiveRecord::Migration[6.0]
       t.string :password_digest
       t.integer :festival_id
       t.integer :money
-      t.boolean :admin, default: false
 
       t.timestamps
     end
