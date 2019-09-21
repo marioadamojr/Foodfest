@@ -24,12 +24,12 @@ class GuestsController < ApplicationController
     end
 
     def index
-        @guests = Guest.all
+        # @guests = Guest.all
     end
 
     private
 
     def guest_params
-        params.require(:guest).permit(:name, :email, :password, :money, :admin)
+        params.require(:guest).permit(:name, :email, :password, :money, :admin, :festival_id)
     end
 end
