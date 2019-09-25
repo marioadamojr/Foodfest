@@ -1,13 +1,23 @@
 class FoodsController < ApplicationController
   
   def new
-    @food = Food.new
+    session[:truck_id] = params[:id]
+    if params[:id] && !Truck.exists?(id: params[:id])
+      # @truck = Truck.find_by(id: params[:id])
+      @food = Food.new(truck_id: params[:id])
+        else
+      redirect_to trucks_path, alert: "Truck not found."
+    end
   end
   
   def create
-      @food = Food.new(guest_id: current_user.id, truck_id: params[:truck_id])
-      redirect_to truck_path(id: params[:truck_id])
+    @food = Food.new(food_params)
+    if @food.save
+        redirect_to truck_foods_path
+    else
+        redirect_to new_truck_food_path
     end
+end
     
     def purchase
         flash[:notice] = @food.buy_item
@@ -16,7 +26,21 @@ class FoodsController < ApplicationController
     private
 
     def food_params
-      params.require(:user).permit(:name, :description, :price, :beverage, :guest_id, :truck_id)
+      params.require(:food).permit(:name, :description, :price, :beverage, :festival_id, :truck_id)
     end
+
+    def index
+      if params[:truck_id]
+        @truck = Truck.find_by(id: params[:truck_id])
+        if @truck.nil?
+          redirect_to trucks_path, alert: "Truck not found"
+        else
+          @foods = @truck.foods
+        end
+      else
+        @foods = Food.all
+      end
+    end
+
   end
   

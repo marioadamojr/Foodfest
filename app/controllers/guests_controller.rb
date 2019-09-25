@@ -17,7 +17,7 @@ class GuestsController < ApplicationController
     def show
         if logged_in?
             @guest = Guest.find(params[:id])
-            @festival = Festival.find(@guest.festival_id)
+            # @festival = Festival.find(@guest.festival_id)
 
         else
             redirect_to '/'
@@ -45,6 +45,6 @@ class GuestsController < ApplicationController
     private
 
     def guest_params
-        params.require(:guest).permit(:name, :email, :password, :money, :festival_id)
+        params.require(:guest).permit(:name, :email, :password, :money,)
     end
 end

@@ -15,8 +15,8 @@ class TrucksController < ApplicationController
 
     def show
         @truck = Truck.find(params[:id])
-        @festival = Festival.find(@truck.festival_id)
         @food = Food.new
+        # session[:truck_id] = @truck.id
     end
 
     def index
@@ -39,7 +39,7 @@ class TrucksController < ApplicationController
     private
 
     def truck_params
-        params.require(:truck).permit(:name, :money, :festival_id)
+        params.require(:truck).permit(:name, :money)
     end
 end
 

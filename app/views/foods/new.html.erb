@@ -5,5 +5,7 @@
 
         Name: <%= f.text_field :name %> </br>
         Money: <%= f.number_field :money %> </br>
+        Food Festival: <%= f.select :festival_id, options_from_collection_for_select(Festival.all, :id, :name)%> </br>
+
     <%= f.submit "Register Food Truck" %>
 <% end %>

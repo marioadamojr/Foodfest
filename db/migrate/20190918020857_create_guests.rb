@@ -4,7 +4,6 @@ class CreateGuests < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :email
       t.string :password_digest
-      t.integer :festival_id
       t.integer :money
 
       t.timestamps

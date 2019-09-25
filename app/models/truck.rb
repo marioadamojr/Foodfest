@@ -1,7 +1,6 @@
 class Truck < ApplicationRecord
-    belongs_to :festival
     has_many :foods
-    has_many :guests, through: :foods
+    has_many :festivals, through: :foods
 
     accepts_nested_attributes_for :foods
 

@@ -5,8 +5,8 @@ class CreateFoods < ActiveRecord::Migration[6.0]
       t.string :description
       t.integer :price
       t.boolean :beverage, default: false
-      t.integer :guest_id
-      t.integer :truck_id
+      t.belongs_to :festival
+      t.belongs_to :truck
 
       t.timestamps
     end

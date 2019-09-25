@@ -17,6 +17,10 @@
         Name: <%= f.text_field :name %> </br>
         Description: <%= f.text_area :description %> </br>
         Money: <%= f.number_field :price %> </br>
+        Beverage?: <%= f.check_box :beverage %> </br>
+        Food Festival: <%= f.select :festival_id, options_from_collection_for_select(Festival.all, :id, :name)%> </br>
+        <% truck_select(@truck, @song) %> </br>
+
     <%= f.submit "Register Food" %>
 <% end %>
 
@@ -28,4 +32,3 @@
 
     <%= link_to "Edit Truck", edit_truck_path(@truck) %> </br>
 
-    <%= link_to "Return to Festival", festival_path(@festival) %>

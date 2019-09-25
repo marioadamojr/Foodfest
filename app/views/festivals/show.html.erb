@@ -1,12 +1,12 @@
 <%# <h1>Festivals#show</h1> %>
 
-<h1><%= @festival.name %> Show Page</h1>
+<h1><%= @festival.name %> Info Page</h1>
 
 Name: <%= @festival.name %> </br>
 Location: <%= @festival.location %> </br>
 Time: <%= @festival.hours %> </br>
 
-<h3>Food Trucks</h3>
+<h2>Food Trucks</h2>
 <ul>
     <% @festival.trucks.each do |t| %>
       <li><%= link_to "#{t.name}",  truck_path(t.id) %></li>
@@ -16,13 +16,3 @@ Time: <%= @festival.hours %> </br>
 
     <%= link_to "New Truck", new_truck_path %>
 
-
-<h3>Guests</h3>
-<% if !current_user %>
-    <%= link_to "Sign Up", new_guest_path %>
-<% end %>  
-<ul>
-    <% @festival.guests.each do |g| %>
-      <li><%= link_to "#{g.name}",  guest_path(g.id) %></li>
-    <% end %>
-</ul>
