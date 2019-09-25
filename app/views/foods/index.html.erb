@@ -1,5 +1,4 @@
 <%# <h1>Foods#index</h1> %>
-<% binding.pry%>
 <ul>
 <% @foods.each do |f| %>
   <li><%= display_truck(f) %> - <%= link_to f.name, truck_food_path(f) %></li>

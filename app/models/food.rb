@@ -15,11 +15,10 @@ class Food < ApplicationRecord
     # end
 
     def truck_name
-      self.try(:truck).try(:name)
+      truck.try(:name)
     end
   
     def truck_name=(name)
-      truck = Truck.find_or_create_by(name: name)
-      self.truck = truck
+      self.truck = Truck.find_or_create_by(name: name) if name.present?
     end
 end

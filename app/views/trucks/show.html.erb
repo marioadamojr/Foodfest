@@ -16,12 +16,13 @@
     <%= form_for ([@truck, @food]) do |f| %>
         Name: <%= f.text_field :name %> </br>
         Description: <%= f.text_area :description %> </br>
-        Money: <%= f.number_field :price %> </br>
+        Price: <%= f.number_field :price %> </br>
         Beverage?: <%= f.check_box :beverage %> </br>
         Food Festival: <%= f.select :festival_id, options_from_collection_for_select(Festival.all, :id, :name)%> </br>
-        <% truck_select(@truck, @song) %> </br>
+        <%= f.hidden_field :truck_id, :value => @truck.id %> </br>
 
     <%= f.submit "Register Food" %>
+
 <% end %>
 
     <%= form_tag '/food', method: :post do %>
