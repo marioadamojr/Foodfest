@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   get '/logout' => 'session#destroy'
 
-  # get '/signup' => 'guests#new'
-  # post '/signup' => 'guests#create'
-
   post '/buy_ticket' => 'tickets#create'
   
   resources :festivals
