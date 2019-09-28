@@ -17,6 +17,7 @@ class GuestsController < ApplicationController
     def show
         if logged_in?
             @guest = Guest.find(params[:id])
+            @tickets = Ticket.all
             # @festival = Festival.find(@guest.festival_id)
 
         else

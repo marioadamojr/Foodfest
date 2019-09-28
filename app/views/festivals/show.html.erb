@@ -10,6 +10,8 @@ Time: <%= @festival.hours.strftime("%r") %> </br>
 
 
 <h2>Food Trucks</h2>
+<%= link_to "New Truck", new_truck_path %>
+
 <ul>
     <% @festival.trucks.each do |t| %>
       <li><%= link_to "#{t.name}",  truck_path(t.id) %></li>
@@ -17,5 +19,7 @@ Time: <%= @festival.hours.strftime("%r") %> </br>
 </ul>
 
 
-    <%= link_to "New Truck", new_truck_path %>
-
+<%= form_tag '/buy_ticket', method: :post do %>
+    <%= hidden_field_tag :festival_id, @festival.id %>
+    <%= submit_tag "Get a Ticket for this Festival" %>
+<% end %>
