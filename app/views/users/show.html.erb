@@ -1,0 +1,19 @@
+<h1><%= @user.name %> Show Page</h1> </br>
+<h3><%= link_to "Edit User", edit_user_path(@user) %></h3> </br>
+
+Name: <%= @user.name %> </br>
+Email: <%= @user.email %> </br>
+Money: <%= @user.money %> </br>
+
+<h3>Festivals</h3>
+<% if flash[:notice] %>
+    <h2><%= flash[:notice] %></h2>
+<% end %>
+<ul>
+    <% @tickets.each do |t| %>
+        <% if t.user_id == current_user.id %>
+            <li><%= link_to "#{t.festival.name}",  festival_path(t.festival_id) %></li>
+        <% end %>
+    <% end %>
+</ul>
+

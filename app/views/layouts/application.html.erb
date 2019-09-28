@@ -6,10 +6,10 @@
   <body>
         <a href="<%= root_url %>"/>Home</a>
         <% if current_user %>
-          <%= link_to "#{current_user.name}", guest_path(current_user.id) %>
+          <%= link_to "#{current_user.name}", user_path(current_user.id) %>
           <%= link_to "Log Out", '/logout' %>
         <% else %>
-          <%= link_to "Sign Up", new_guest_path %>
+          <%= link_to "Sign Up", new_user_path %>
           <%= link_to "Log In", '/login' %>
         <% end %>  
 

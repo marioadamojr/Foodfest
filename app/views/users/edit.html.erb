@@ -1,12 +1,12 @@
-<%# <h1>Guests#edit</h1> %>
-<h1>Edit Guest</h1>
+<%# <h1>Users#edit</h1> %>
+<h1>Edit User</h1>
 
-    <%= form_for @guest do |f| %>
+    <%= form_for @user do |f| %>
 
         Name: <%= f.text_field :name %> </br>
         Email: <%= f.text_field :email %> </br>
         Password: <%= f.password_field :password %> </br>
         <%# add pass confirm %>
         Money: <%= f.number_field :money %> </br>
-    <%= f.submit "Register Guest" %>
+    <%= f.submit "Register User" %>
 <% end %>

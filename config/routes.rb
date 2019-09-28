@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   resources :festivals
 
-  resources :guests
+  resources :users
 
   resources :trucks do
     resources :foods

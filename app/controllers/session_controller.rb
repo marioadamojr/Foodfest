@@ -1,27 +1,27 @@
 class SessionController < ApplicationController
   def new
-    @guest = Guest.new
+    @user = Guest.new
   end
 
   def create_nonfacebook
     # binding.pry
-    @guest = Guest.find(params[:email])
-    if @guest && @guest.authenticate(params[:password])
-      session[:guest_id] = @guest.id
-      redirect_to @guest
+    @user = User.find(params[:email])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to @user
     else
       redirect_to '/login'
     end
   end
 
   def create
-    @guest = Guest.find_or_create_by(uid: auth['uid']) do |u|
+    @user = User.find_or_create_by(uid: auth['uid']) do |u|
       u.name = auth['info']['name']
       u.email = auth['info']['email']
       u.money = 0
     end
  
-    session[:guest_id] = @guest.id
+    session[:user_id] = @user.id
  
     redirect_to '/'
   end
