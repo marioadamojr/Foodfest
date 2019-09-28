@@ -53,6 +53,6 @@ gem 'pry', '~> 0.12.2'
 
 gem 'omniauth'
 
-gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 gem 'dotenv-rails'

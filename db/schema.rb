@@ -31,19 +31,9 @@ ActiveRecord::Schema.define(version: 2019_09_28_143743) do
     t.index ["truck_id"], name: "index_foods_on_truck_id"
   end
 
-  create_table "guests", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.integer "money"
-    t.integer "uid"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "tickets", force: :cascade do |t|
     t.integer "festival_id"
-    t.integer "guest_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,6 +41,15 @@ ActiveRecord::Schema.define(version: 2019_09_28_143743) do
   create_table "trucks", force: :cascade do |t|
     t.string "name"
     t.integer "festival_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.integer "money"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
