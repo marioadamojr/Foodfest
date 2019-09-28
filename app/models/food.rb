@@ -1,6 +1,5 @@
 class Food < ApplicationRecord
   belongs_to :truck
-  belongs_to :festival
 
     # def buy_item
     #   if user.money < self.price

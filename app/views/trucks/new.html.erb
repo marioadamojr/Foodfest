@@ -4,7 +4,7 @@
     <%= form_for @truck do |f| %>
 
         Name: <%= f.text_field :name %> </br>
-        Money: <%= f.number_field :money %> </br>
+        Food Festival: <%= f.select :festival_id, options_from_collection_for_select(Festival.all, :id, :name)  %> </br>
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <%= f.submit "Register Food Truck" %>
 <% end %>

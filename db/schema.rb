@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_020933) do
+ActiveRecord::Schema.define(version: 2019_09_28_143743) do
 
   create_table "festivals", force: :cascade do |t|
     t.string "name"
@@ -25,11 +25,9 @@ ActiveRecord::Schema.define(version: 2019_09_18_020933) do
     t.string "description"
     t.integer "price"
     t.boolean "beverage", default: false
-    t.integer "festival_id"
     t.integer "truck_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["festival_id"], name: "index_foods_on_festival_id"
     t.index ["truck_id"], name: "index_foods_on_truck_id"
   end
 
@@ -42,9 +40,16 @@ ActiveRecord::Schema.define(version: 2019_09_18_020933) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tickets", force: :cascade do |t|
+    t.integer "festival_id"
+    t.integer "guest_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "trucks", force: :cascade do |t|
     t.string "name"
-    t.integer "money"
+    t.integer "festival_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

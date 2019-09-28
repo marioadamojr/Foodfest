@@ -4,7 +4,9 @@
 
 Name: <%= @festival.name %> </br>
 Location: <%= @festival.location %> </br>
-Time: <%= @festival.hours %> </br>
+Date: <%= @festival.hours.strftime("%B %d %Y") %> </br>
+Time: <%= @festival.hours.strftime("%r") %> </br>
+
 
 <h2>Food Trucks</h2>
 <ul>

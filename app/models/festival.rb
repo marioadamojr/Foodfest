@@ -1,4 +1,4 @@
 class Festival < ApplicationRecord
-    has_many :foods
-    has_many :trucks, through: :foods
+    has_many :trucks
+    has_many :users, through: :tickets
 end

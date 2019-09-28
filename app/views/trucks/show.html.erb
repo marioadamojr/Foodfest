@@ -6,27 +6,19 @@
 
 <%# list food items %>
 
-<h2>Food Items</h2>
+<h2>Food Menu</h2>
 <ul>
     <% @truck.foods.each do |t| %>
         <li>  
-            <%= "#{t.name}" %> 
+            <%= link_to "#{t.name}", truck_food_path(t.id) %> 
         </li>
     <% end %>
 </ul>
 
-<h3>New Food </h3>
-    <%= form_for ([@truck, @food]) do |f| %>
-        Name: </br><%= f.text_field :name %> </br>
-        Description: </br><%= f.text_area :description %> </br>
-        Price: </br><%= f.number_field :price %> </br>
-        Beverage?: <%= f.check_box :beverage %> </br>
-        Food Festival: <%= f.select :festival_id, options_from_collection_for_select(Festival.all, :id, :name)%> </br>
-        <%= f.hidden_field :truck_id, :value => @truck.id %> </br>
 
-    <%= f.submit "Register Food" %>
+<h3><%= link_to "New Food", new_truck_food_path(@truck.id) %> </h3>
 
-<% end %>
+
 
 <%#    <%= form_tag '/food', method: :post do %>
 <%#        <%= hidden_field_tag :truck_id, @truck.id %>
