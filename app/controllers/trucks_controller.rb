@@ -36,6 +36,11 @@ class TrucksController < ApplicationController
         end
     end
 
+    def destroy
+        Truck.find(params[:id]).destroy
+        redirect_to trucks_url
+    end
+
     private
 
     def truck_params

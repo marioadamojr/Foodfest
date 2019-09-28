@@ -4,3 +4,7 @@
         Name: <%= f.text_field :name %> </br>
     <%= f.submit "Update Truck" %>
 <% end %>
+
+<%= form_tag @truck, method: "delete", data: { confirm: "Really?" } do %>
+  <%= submit_tag "Delete #{@truck.name}" %>
+<% end %>

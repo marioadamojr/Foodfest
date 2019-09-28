@@ -2,12 +2,12 @@
     <p><%= flash[:notice] %></p>
 <% end %>
 
-<h1><%= @guest.name %> Show Page</h1>
+<h1><%= @guest.name %> Show Page</h1> </br>
+<h3><%= link_to "Edit Guest", edit_guest_path(@guest) %></h3> </br>
 
 Name: <%= @guest.name %> </br>
 Email: <%= @guest.email %> </br>
 Money: <%= @guest.money %> </br>
 
-<%= link_to "Edit Guest", edit_guest_path(@guest) %> </br>
 
 

@@ -1,10 +1,11 @@
 <%# <h1>Festivals#index</h1> %>
+<h3><%= link_to "New Festival", new_festival_path %></h3>
 
 <h2>List of Food Festivals</h2>
+
 <ul>
     <% @festivals.each do |f| %>
       <li><%= link_to "#{f.name}",  festival_path(f.id) %></li>
       <% end %>
 </ul>
 
-<p><%= link_to "New Festival", new_festival_path %></p>
