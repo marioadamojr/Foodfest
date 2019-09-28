@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   root 'static#homepage'
 
   get '/login' => 'session#new'
-  post '/login' => 'session#create'
+  post '/login' => 'session#create_nonfacebook'
   get '/logout' => 'session#destroy'
+
+  get '/auth/facebook/callback' => 'session#create'
+
 
   post '/buy_ticket' => 'tickets#create'
   
