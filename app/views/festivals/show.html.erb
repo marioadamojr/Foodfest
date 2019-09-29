@@ -18,8 +18,9 @@ Time: <%= @festival.hours.strftime("%r") %> </br>
     <% end %>
 </ul>
 
-
-<%= form_tag '/buy_ticket', method: :post do %>
-    <%= hidden_field_tag :festival_id, @festival.id %>
-    <%= submit_tag "Get a Ticket for this Festival" %>
+<% if logged_in? %>
+  <%= form_tag '/buy_ticket', method: :post do %>
+      <%= hidden_field_tag :festival_id, @festival.id %>
+      <%= submit_tag "Get a Ticket for this Festival" %>
+  <% end %>
 <% end %>

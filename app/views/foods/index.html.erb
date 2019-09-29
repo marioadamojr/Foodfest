@@ -1,7 +1,7 @@
 <%# <h1>Foods#index</h1> %>
 <ul>
 <% @foods.each do |f| %>
-  <li><%= display_truck(f) %> - <%= link_to f.name, truck_food_path(f) %></li>
+  <li><%= display_truck(f) %> - <%= link_to "#{f.name}", truck_food_path(@truck, f)  %> </li>
 <% end %>
 </ul>
 <br>

@@ -3,40 +3,28 @@
 
 <h3><%= link_to "Edit Truck", edit_truck_path(@truck) %> </h3> 
 
-
-
 <%# list food items %>
 <h3><%= link_to "New Food", new_truck_food_path(@truck.id) %> </h3>
 
 <h2>Food Menu</h2>
 <ul>
-    <% @truck.foods.each do |t| %>
-        <% if t.beverage = false %>
+    <% @truck.foods.each do |f| %>
+        <% if f.beverage == false %>
             <li>  
-                <%= link_to "#{t.name}", truck_food_path(t.id) %> 
+                <%= link_to "#{f.name}", truck_food_path(@truck, f)  %> 
             </li>
         <% end %>
     <% end %>
 </ul>
-
 <h2>Drink Menu</h2>
 <ul>
-    <% @truck.foods.each do |t| %>
-        <% if t.beverage = true %>
+    <% @truck.foods.each do |f| %>
+        <% if f.beverage == true %>
             <li>  
-                <%= link_to "#{t.name}", truck_food_path(t.id) %> 
+                <%= link_to "#{f.name}", truck_food_path(@truck, f) %> 
             </li>
         <% end %>
     <% end %>
 </ul>
-
-
-
-
-<%#    <%= form_tag '/food', method: :post do %>
-<%#        <%= hidden_field_tag :truck_id, @truck.id %>
-<%#        <%= submit_tag "Purchase item" %>
-<%#    <% end %>
-
 
 

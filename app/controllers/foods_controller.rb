@@ -7,6 +7,7 @@ class FoodsController < ApplicationController
       redirect_to trucks_path, alert: "Truck not found."
     else
       @food = @truck.foods.build
+      @truck = Truck.find_by(params[:truck_id])
     end
   end
   
