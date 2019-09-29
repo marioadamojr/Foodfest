@@ -6,21 +6,9 @@ class SessionController < ApplicationController
   def create
     # binding.pry
     if auth_hash = request.env["omniauth.auth"]
-      # github log in
-      oauth_email = request.env["omniauth.auth"]["info"]["email"]
-      if user = User.find_by(:email => oauth_email)
-        session[:user_id] = user.id
-        redirect_to '/'
-      else
-        user = User.new(:email =>oauth_email, :password_digest => SecureRandom.hex, :name => request.env["omniauth.auth"]["info"]["name"])
-        if user.save
-          session[:user_id] = user.id
-          redirect_to '/'
-        else
-          raise user.errors.full_messages.inspect
-          redirect_to '/'
-        end
-      end
+      user = User.find_or_create_by_omniauth(auth_hash)
+      session[:user_id] = user.id
+      redirect_to '/'
     else
       # normal log in
       @user = User.find_by(:email => params[:email])
