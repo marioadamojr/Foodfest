@@ -34,6 +34,16 @@ class FestivalsController < ApplicationController
         end
     end
 
+    def dates_search
+    end
+
+    def dates_display
+        # binding.pry
+        
+        @search_dates = Festival.where('hours BETWEEN ? AND ?', params[:festival][:start_date].to_datetime, params[:festival][:end_date].to_datetime)
+     end
+
+
     private
 
     def festival_params

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'static#homepage'
 
+  get '/dates_search' => 'festivals#dates_search'
+  post '/dates_search' => 'festivals#dates_display'
+
+
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   get '/logout' => 'session#destroy'

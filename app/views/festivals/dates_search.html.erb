@@ -1,0 +1,6 @@
+<%# <h1>Festivals#dates_search</h1> %>
+<%= form_tag ('/dates_search') do %>  
+    <%= date_field(:festival, :start_date) %>
+    <%= date_field(:festival, :end_date) %>
+    <%= submit_tag %>
+<% end %>

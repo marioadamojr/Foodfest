@@ -1,0 +1,8 @@
+<%# <h1>Festivals#dates_display</h1> %>
+<ul>
+    <% @search_dates.each do |sd| %>
+            <li>  
+                <%= link_to "#{sd.name}", festival_path(sd)  %> 
+            </li>
+    <% end %>
+</ul>

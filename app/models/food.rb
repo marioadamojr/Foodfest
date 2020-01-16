@@ -1,6 +1,9 @@
 class Food < ApplicationRecord
   belongs_to :truck
 
+  validates :name, presence: true 
+  validates :name, uniqueness: true
+
     # def buy_item
     #   if user.money < self.price
     #     "Sorry. You do not have enough money to purhcase #{self.name}"
