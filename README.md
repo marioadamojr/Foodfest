@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run install the project and run `rails s` then go to http://localhost:3000/ in your browser
 
-Things you may want to cover:
+This uses Ruby 2.5.5 and Rails 6.0.0
 
-* Ruby version
+The purpose of this website is to create Food Festivals, Food Trucks for those festivals, and menu items for those food trucks.
 
-* System dependencies
+You can also create users and sign up to festivals. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There are some known bugs with the code but the core functionality all preforms as expected.
